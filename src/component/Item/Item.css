@@ -3,9 +3,9 @@
 */
 
 .Item {
-  /* propertys here */
+  background-color: crimson;
 }
 
 .Item img {
-  width: 20%;
+  width: 80px;
 }

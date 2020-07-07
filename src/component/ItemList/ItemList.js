@@ -10,10 +10,12 @@ class ItemList extends Component {
     this.state = {
       items: [
         {
+          id: 1,
           title: 'Lorem ipsum 1',
           img: 'img/smiley.png'
         },
         {
+          id: 2,
           title: 'Lorem ipsum 2',
           img: 'img/smiley.png'
         }
@@ -31,6 +33,7 @@ class ItemList extends Component {
 
   addItem() {
     let newItem = {
+      id: this.state.items.length + 1,
       title: `Lorem ipsum ${this.state.items.length + 1}`,
       img: 'img/smiley.png'
     };
