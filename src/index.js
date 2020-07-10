@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import RollerCoaster from './RollerCoaster';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RollerCoaster />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

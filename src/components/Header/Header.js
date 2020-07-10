@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './Header.css';
+import React, { Component } from 'react'
+import './Header.css'
 
 class Header extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       message: "Welcome to",
@@ -23,8 +23,8 @@ class Header extends Component {
         
         <h1>{ `${this.state.message} ${this.props.brand}` }</h1>
       </header>
-    );
+    )
   }
 }
 
-export default Header;
+export default Header

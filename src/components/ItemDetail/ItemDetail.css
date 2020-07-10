@@ -1,16 +1,12 @@
-/*
- * ItemDetail css File
-*/
-
 .ItemDetail {
 }
 
-.calentito {
+.hot {
   background-color: orangered;
   color: black;
 }
 
-.frejquito {
+.cold {
   background-color: navy;
   color: white;
 }
