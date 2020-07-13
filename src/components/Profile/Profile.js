@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './Profile.css'
 
-import { LanguageConsumer } from './../../contexts/LanguageContext'
+import LanguageContext, { LanguageConsumer } from './../../contexts/LanguageContext'
 
 class Profile extends Component {
-  static contextType = LanguageConsumer;
+  static contextType = LanguageContext;
 
   constructor(props) {
     super(props)
@@ -51,7 +51,13 @@ class Profile extends Component {
       }
     }
 
-    this.setState({ ...this.state, submitMessage, validationMessages, names, currentLanguage: this.context.currentLanguage })
+    this.setState({
+      ...this.state,
+      submitMessage,
+      validationMessages,
+      names,
+      currentLanguage: this.context.currentLanguage
+    })
   }
 
   handleSubmit(e) {

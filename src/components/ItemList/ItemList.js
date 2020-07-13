@@ -53,9 +53,7 @@ class ItemList extends Component {
     return (
       <section>
         <div>{/*this.getItems()*/}</div>
-        <div>
-          <button onClick={this.addItem}>New Item</button>
-        </div>
+        {/* <FormAddItem addItem={this.addItem} /> */}
       </section>
     )
   }

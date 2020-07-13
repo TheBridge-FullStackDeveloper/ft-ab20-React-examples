@@ -23,17 +23,22 @@ class App extends Component {
       currentLanguage: "es"
     }
 
-    this.handleLanguage = this.handleLanguage.bind()
+    this.handleLanguage = this.handleLanguage.bind(this)
   }
 
-  handleLanguage() {
-    //this.setState({...this.state, ... })
+  handleLanguage(lang) {
+    this.setState({ ...this.state, currentLanguage: lang })
   }
 
   render() {
     return (
       <div className="App">
-        <LanguageProvider value={{currentLanguage: this.state.currentLanguage, handleLanguage: this.handleLanguage}}>
+        <LanguageProvider value={
+          {
+            currentLanguage: this.state.currentLanguage,
+            handleLanguage: this.handleLanguage
+          }
+        }>
           <Header brand={AppGlobalData.brand} />
           
           <Router>
