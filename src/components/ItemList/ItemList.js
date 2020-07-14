@@ -3,30 +3,32 @@ import './ItemList.css'
 
 import Item from '../Item/Item'
 
+import dblink from './../../model/firebase-config'
+
 class ItemList extends Component {
   constructor(props){
     super(props)
 
-    this.state = {}
+    this.state = {
+      items: []
+    }
 
     this.addItem = this.addItem.bind(this)
   }
 
   componentDidMount() {
-    let items = [
-      {
-        id: 1,
-        title: 'Lorem ipsum 1',
-        img: 'img/smiley.png'
-      },
-      {
-        id: 2,
-        title: 'Lorem ipsum 2',
-        img: 'img/smiley.png'
-      }
-    ]
+    const db = dblink.database();
 
-    this.setState({...this.state, items: items})
+    db.ref('/items').on('value', (responseFB) => {
+      this.setState({ ...this.state, items: responseFB.val()})
+    })
+  }
+
+  componentDidUnmount() {
+    // Operaciones de "destruccion"
+    // P.e. cerrar la conexion
+
+    //db.ref('/items').off('value');
   }
 
   getItems() {
@@ -52,7 +54,7 @@ class ItemList extends Component {
   render() {
     return (
       <section>
-        <div>{/*this.getItems()*/}</div>
+        <div>{this.getItems()}</div>
         {/* <FormAddItem addItem={this.addItem} /> */}
       </section>
     )
